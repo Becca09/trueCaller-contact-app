@@ -16,7 +16,7 @@ public interface ContactRepository {
 
     void deleteById(int id);
 
-    Contact updateById(int id, String firstName, String lastName, String phoneNumber);
+//    Contact updateById(int id, String firstName, String lastName, String phoneNumber);
 
     List<Contact> findByName(String name);
 

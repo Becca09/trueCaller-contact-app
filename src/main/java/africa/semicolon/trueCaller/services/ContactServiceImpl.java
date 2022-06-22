@@ -53,7 +53,12 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public Contact updateById(int id, String firstName, String lastName, String phoneNumber) {
-        return contactRepository.updateById(id, firstName, lastName, phoneNumber);
+        Contact contact = findById(id);
+        contact.setFirstName(firstName);
+        contact.setLastName(lastName);
+        contact.setPhoneNumber(phoneNumber);
+        return contactRepository.save(contact);
+//        return contactRepository.updateById(id, firstName, lastName, phoneNumber);
     }
 
     @Override
